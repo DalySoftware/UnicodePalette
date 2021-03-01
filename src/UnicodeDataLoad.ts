@@ -40,6 +40,7 @@ export const loadUnicodeCharacters = () => {
                 line[0],
                 line[1],
                 line[2],
+                mappedAliases.find(x => x.code === line[0])?.aliases ?? [],
                 // parseInt(line[3]),
                 // line[4],
                 // line[5],
@@ -50,7 +51,6 @@ export const loadUnicodeCharacters = () => {
                 // line[10],
                 // line[11],
                 // line[12],
-                mappedAliases.find(x => x.code === line[0])?.aliases ?? [],
             );
             return x;
         },
