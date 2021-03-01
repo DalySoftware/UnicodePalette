@@ -1,24 +1,10 @@
 import { QuickPickItem } from "vscode";
-import loadUnicodeData from "./UnicodeCharacterData";
+import { loadParsedData } from "./UnicodeDataLoad";
 
-const getCharacterQuickPickItems = () => {
+const getCharacterQuickPickItems = async () => {
     let items: QuickPickItem[] = [];
 
-    const testItem1: QuickPickItem = {
-        label: "#",
-        description: "sharp",
-        detail: "pound",
-    };
-
-    const testItem2: QuickPickItem = {
-        label: ":",
-        description: "colon",
-        detail: "colon detail",
-    };
-
-    items.push(testItem1, testItem2);
-
-    const unicodeCharacters = loadUnicodeData();
+    const unicodeCharacters = loadParsedData();
     const unicodeQuickPickItems = unicodeCharacters.map(char =>
         char.asQuickPickItem(),
     );
