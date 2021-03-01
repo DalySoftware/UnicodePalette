@@ -113,39 +113,3 @@ export const loadParsedData = () => {
     console.timeEnd("loadParsedData");
     return parsedCharacters;
 };
-
-export const loadParsedDataViaStream = () => {
-    const path =
-        "C:\\Users\\irond\\Documents\\Coding\\CharacterPalette\\unicodeData\\ParsedCharacters.txt";
-
-    let parsedCharacters: UnicodeCharacter[] = [];
-
-    console.time("loadParsedDataViaStream");
-
-    const resultPromise = new Promise<UnicodeCharacter[]>((resolve, reject) => {
-        lineReader.eachLine(path, (line: string, last: boolean) => {
-            if (line !== "[" && line !== "]") {
-                if (line.substring(line.length - 1, line.length) === ",")
-                    line = line.substring(0, line.length - 1);
-
-                const plainObject = JSON.parse(line);
-
-                const parsedCharacter = new UnicodeCharacter(
-                    plainObject.code,
-                    plainObject.name,
-                    plainObject.generalCategory,
-                    plainObject.aliases,
-                );
-
-                parsedCharacters.push(parsedCharacter);
-            }
-
-            if (last) {
-                console.timeEnd("loadParsedDataViaStream");
-                resolve(parsedCharacters);
-            }
-        });
-    });
-
-    return resultPromise;
-};
