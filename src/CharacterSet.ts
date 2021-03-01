@@ -4,7 +4,7 @@ import { loadParsedData } from "./UnicodeDataLoad";
 const getCharacterQuickPickItems = async () => {
     let items: QuickPickItem[] = [];
 
-    const unicodeCharacters = loadParsedData();
+    const unicodeCharacters = await loadParsedData();
     const unicodeQuickPickItems = unicodeCharacters.map(char =>
         char.asQuickPickItem(),
     );

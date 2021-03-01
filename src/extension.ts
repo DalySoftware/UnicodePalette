@@ -14,9 +14,8 @@ export function activate(context: vscode.ExtensionContext) {
         vscode.commands.registerTextEditorCommand(
             "characterpalette.insertCharacter",
             async (editor, edit) => {
-                console.time("getCharacterQuickPickItems");
-                const characters = getCharacterQuickPickItems();
-                console.timeEnd("getCharacterQuickPickItems");
+                const characters = await getCharacterQuickPickItems();
+
                 const input = await vscode.window.showQuickPick(characters, {
                     matchOnDescription: true,
                     matchOnDetail: true,

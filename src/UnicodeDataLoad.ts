@@ -2,14 +2,14 @@ import Papa, { parse } from "papaparse";
 import * as fs from "fs";
 import UnicodeCharacter from "./UnicodeCharacter";
 import { GeneralCategory } from "./GeneralCategory";
-import { writeFileSync } from "fs";
+import { writeFileSync, promises } from "fs";
 
-export const loadUnicodeCharacters = () => {
+export const loadUnicodeCharacters = async () => {
     const filePath =
         "C:\\Users\\irond\\Documents\\Coding\\CharacterPalette\\unicodeData\\UnicodeData-2021-02-26.txt";
 
     console.time("loadUnicodeCharacters");
-    const unparsedText = fs.readFileSync(filePath, {
+    const unparsedText = await promises.readFile(filePath, {
         encoding: "utf-8",
     });
 
@@ -96,12 +96,12 @@ const saveParsedData = () => {
     writeFileSync(path, JSON.stringify(parsedData));
 };
 
-export const loadParsedData = () => {
+export const loadParsedData = async () => {
     console.time("loadParsedData");
     const path =
         "C:\\Users\\irond\\Documents\\Coding\\CharacterPalette\\unicodeData\\ParsedCharacters.txt";
 
-    const json = fs.readFileSync(path, { encoding: "utf-8" });
+    const json = await promises.readFile(path, { encoding: "utf-8" });
 
     console.time("deserializing");
     const parsedCharacters: UnicodeCharacter[] = JSON.parse(json).map(
