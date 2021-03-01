@@ -1,5 +1,5 @@
-import { QuickPickItem } from "vscode";
 import { categoryFromString, GeneralCategory } from "./GeneralCategory";
+import { QuickPickItemExtended } from "./QuickPickItemExtended";
 
 export default class UnicodeCharacter {
     constructor(
@@ -30,6 +30,11 @@ export default class UnicodeCharacter {
             16,
         )}`;
 
-        return { label, description, detail } as QuickPickItem;
+        return {
+            label: label,
+            description: description,
+            detail: detail,
+            character: this,
+        } as QuickPickItemExtended;
     }
 }

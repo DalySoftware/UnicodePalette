@@ -2,6 +2,12 @@
 // Import the module and reference it with the alias vscode in your code below
 import * as vscode from "vscode";
 import getCharacterQuickPickItems from "./CharacterSet";
+import { QuickPickItemExtended } from "./QuickPickItemExtended";
+import {
+    addCharacterToRecentlyUsed,
+    getRecentlyUsed,
+} from "./RecentlyUsedCharactersStorage";
+import UnicodeCharacter from "./UnicodeCharacter";
 
 // this method is called when your extension is activated
 // your extension is activated the very first time the command is executed
@@ -14,16 +20,29 @@ export function activate(context: vscode.ExtensionContext) {
         vscode.commands.registerTextEditorCommand(
             "characterpalette.insertCharacter",
             async (editor, edit) => {
-                const characters = await getCharacterQuickPickItems();
+                let quickPickItems = getRecentlyUsed(context).map(x =>
+                    x.asQuickPickItem(),
+                );
+                // console.log(recentlyUsed);
 
-                const input = await vscode.window.showQuickPick(characters, {
-                    matchOnDescription: true,
-                    matchOnDetail: true,
-                    ignoreFocusOut: true,
-                });
+                quickPickItems = [
+                    ...quickPickItems,
+                    ...(await getCharacterQuickPickItems()),
+                ];
+
+                const input = (await vscode.window.showQuickPick(
+                    quickPickItems,
+                    {
+                        matchOnDescription: true,
+                        matchOnDetail: true,
+                        ignoreFocusOut: true,
+                    },
+                )) as QuickPickItemExtended;
 
                 if (input?.label) {
                     editor.edit(edit => {
+                        addCharacterToRecentlyUsed(context, input.character);
+
                         const oldSelectionEnd = editor.selection.end;
 
                         if (editor.selection.isEmpty) {
