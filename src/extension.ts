@@ -14,11 +14,11 @@ import UnicodeCharacter from "./UnicodeCharacter";
 export function activate(context: vscode.ExtensionContext) {
     // Use the console to output diagnostic information (console.log) and errors (console.error)
     // This line of code will only be executed once when your extension is activated
-    console.debug('Extension "characterpalette" activating');
+    console.debug('Extension "unicodepalette" activating');
 
     context.subscriptions.push(
         vscode.commands.registerTextEditorCommand(
-            "characterpalette.insertCharacter",
+            "unicodepalette.insertCharacter",
             async (editor, edit) => {
                 let quickPickItems = getRecentlyUsed(context).map(x =>
                     x.asQuickPickItem(),
@@ -70,5 +70,5 @@ export function activate(context: vscode.ExtensionContext) {
 
 // this method is called when your extension is deactivated
 export function deactivate() {
-    console.debug('Extension "characterpalette" deactivating');
+    console.debug('Extension "unicodepalette" deactivating');
 }

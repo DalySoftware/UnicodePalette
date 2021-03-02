@@ -1,6 +1,6 @@
 {
-    "name": "characterpalette",
-    "displayName": "CharacterPalette",
+    "name": "unicodepalette",
+    "displayName": "Unicode Palette",
     "description": "Command palette for entering unicode characters. Useful for symbols, emoji and other characters that you might not have on your keyboard",
     "version": "0.0.1",
     "engines": {
@@ -10,13 +10,13 @@
         "Other"
     ],
     "activationEvents": [
-        "onCommand:characterpalette.insertCharacter"
+        "onCommand:unicodepalette.insertCharacter"
     ],
     "main": "./out/extension.js",
     "contributes": {
         "commands": [
             {
-                "command": "characterpalette.insertCharacter",
+                "command": "unicodepalette.insertCharacter",
                 "category": "Character Palette",
                 "title": "Insert Character"
             }
