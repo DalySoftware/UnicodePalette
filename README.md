@@ -8,11 +8,11 @@ Access the extension via `Ctrl + Shit + P` or `View` > `Command Palette...` > `I
 
 Search for characters by the official name, code, category or any unicode provided aliases.
 
-![Search by alias](readmeFiles\aliases.png)
+![Search by alias](./readmeFiles/aliases.png)
 
 Your most recently characters will be shown on opening the palette.
 
-![Recently used](readmeFiles\recently_used.png)
+![Recently used](./readmeFiles/recently_used.png)
 
 ## Known Issues
 
