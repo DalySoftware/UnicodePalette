@@ -61,6 +61,8 @@ export function activate(context: vscode.ExtensionContext) {
                         );
                     });
                 }
+
+                deactivate();
             },
         ),
     );
