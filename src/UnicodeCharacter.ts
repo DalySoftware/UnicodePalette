@@ -19,16 +19,20 @@ export default class UnicodeCharacter {
         public simpleTitlecaseMapping: string = "",
     ) {}
 
+    toString() {
+        return String.fromCodePoint(parseInt(this.code, 16));
+    }
+
     asQuickPickItem() {
         const categoryName = categoryFromString(this.generalCategory);
-        const aliasesString = this.aliases.join(", ").toLowerCase();
+        const aliasesString =
+            this.aliases.length > 0
+                ? this.aliases.join(", ").toLowerCase() + "\t"
+                : "";
 
-        const label = String.fromCodePoint(parseInt(this.code, 16));
-        const detail = `name: ${this.name}, aliases: ${aliasesString}, category: ${categoryName}`;
-        const description = `hex code: ${this.code}, int code: ${parseInt(
-            this.code,
-            16,
-        )}`;
+        const label = this.toString() + `\t${this.name}`;
+        const detail = categoryName + aliasesString;
+        const description = `hex:${this.code}\tint:${parseInt(this.code, 16)}`;
 
         return {
             label: label,

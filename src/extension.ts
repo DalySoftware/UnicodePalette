@@ -23,7 +23,6 @@ export function activate(context: vscode.ExtensionContext) {
                 let quickPickItems = getRecentlyUsed(context).map(x =>
                     x.asQuickPickItem(),
                 );
-                // console.log(recentlyUsed);
 
                 quickPickItems = [
                     ...quickPickItems,
@@ -46,9 +45,15 @@ export function activate(context: vscode.ExtensionContext) {
                         const oldSelectionEnd = editor.selection.end;
 
                         if (editor.selection.isEmpty) {
-                            edit.insert(editor.selection.start, input?.label);
+                            edit.insert(
+                                editor.selection.start,
+                                input?.character.toString(),
+                            );
                         } else {
-                            edit.replace(editor.selection, input?.label);
+                            edit.replace(
+                                editor.selection,
+                                input?.character.toString(),
+                            );
                         }
                         editor.selection = new vscode.Selection(
                             oldSelectionEnd,
@@ -62,4 +67,6 @@ export function activate(context: vscode.ExtensionContext) {
 }
 
 // this method is called when your extension is deactivated
-export function deactivate() {}
+export function deactivate() {
+    console.debug('Extension "characterpalette" deactivating');
+}
