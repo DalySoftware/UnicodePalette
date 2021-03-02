@@ -4,6 +4,7 @@ out/test/**
 src/**
 .gitignore
 .yarnrc
+rawData/**
 vsc-extension-quickstart.md
 **/tsconfig.json
 **/.eslintrc.json
