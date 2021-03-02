@@ -1,6 +1,8 @@
 # Unicode Palette
 
-A character palette for searching for and inserting unicode characters in VS Code. Includes searching by unicode published character aliases and categories.
+A character palette for searching for and inserting unicode characters in VS Code. Useful for symbols, emoji and other characters that you might not have on your keyboard.
+
+Includes searching by unicode published character aliases and categories.
 
 Access the extension via `Ctrl + Shit + P` or `View` > `Command Palette...` > `Insert Characters`.
 
