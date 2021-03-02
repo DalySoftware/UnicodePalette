@@ -12,7 +12,7 @@ Search for characters by the official name, code, category or any unicode provid
 
 ![Search by alias](./readmeFiles/aliases.png)
 
-Your most recently characters will be shown on opening the palette.
+Your most recently used characters will be shown on opening the palette.
 
 ![Recently used](./readmeFiles/recently_used.png)
 
