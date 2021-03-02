@@ -1,6 +1,4 @@
-import { QuickPickItem } from "vscode";
-import { QuickPickItemExtended } from "./QuickPickItemExtended";
-import { loadParsedData } from "./UnicodeDataLoad";
+import { loadParsedData } from "./CharacterDataLoad";
 
 const getCharacterQuickPickItems = async () => {
     const unicodeCharacters = await loadParsedData();
