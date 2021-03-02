@@ -2,7 +2,7 @@ import { ExtensionContext } from "vscode";
 import UnicodeCharacter from "./UnicodeCharacter";
 
 const recentlyUsedKey = "recentlyUsed";
-const maxToStore = 10;
+const maxToStore = 20;
 
 export const getRecentlyUsed = (context: ExtensionContext) => {
     const state = context.globalState;
