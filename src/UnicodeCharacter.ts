@@ -24,10 +24,10 @@ export default class UnicodeCharacter {
     }
 
     asQuickPickItem() {
-        const categoryName = categoryFromString(this.generalCategory);
+        const categoryName = `[${categoryFromString(this.generalCategory)}]`;
         const aliasesString =
             this.aliases.length > 0
-                ? this.aliases.join(", ").toLowerCase() + "\t"
+                ? "\t" + this.aliases.join(", ").toLowerCase()
                 : "";
 
         const label = this.toString() + `\t${this.name}`;
