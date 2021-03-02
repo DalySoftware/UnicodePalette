@@ -17,7 +17,7 @@
         "commands": [
             {
                 "command": "unicodepalette.insertCharacter",
-                "category": "Character Palette",
+                "category": "Unicode Palette",
                 "title": "Insert Character"
             }
         ]
