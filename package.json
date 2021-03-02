@@ -1,14 +1,26 @@
 {
     "name": "unicodepalette",
     "displayName": "Unicode Palette",
-    "description": "Command palette for entering unicode characters. Useful for symbols, emoji and other characters that you might not have on your keyboard",
-    "version": "0.0.1",
+    "description": "A character palette for searching for and inserting unicode characters in VS Code. Useful for symbols, emoji and other characters that you might not have on your keyboard.",
+    "icon": "readmeFiles/icon.png",
+    "version": "1.0.0",
     "engines": {
         "vscode": "^1.53.0"
     },
     "categories": [
         "Other"
     ],
+    "keywords": [
+        "unicode",
+        "characters",
+        "insert",
+        "palette",
+        "emoji"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/DalySoftware/UnicodePalette"
+    },
     "activationEvents": [
         "onCommand:unicodepalette.insertCharacter"
     ],
