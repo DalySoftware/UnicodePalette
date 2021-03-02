@@ -1,15 +1,27 @@
 import Papa from "papaparse";
 import * as fs from "fs";
+import * as path from "path";
 import UnicodeCharacter from "./UnicodeCharacter";
 import { promises } from "fs";
 import { GeneralCategory } from "./GeneralCategory";
 
-export const loadUnicodeCharacters = async () => {
-    const filePath =
-        "C:\\Users\\irond\\Documents\\Coding\\CharacterPalette\\unicodeData\\UnicodeData-2021-02-26.txt";
+const unicodeDataTxtFilePath = path.join(
+    __dirname,
+    "..",
+    "rawData",
+    "UnicodeData-2021-02-26.txt",
+);
 
+const processedNamesListFilePath = path.join(
+    __dirname,
+    "..",
+    "raw",
+    "NamesListPreProcessed.txt",
+);
+
+export const loadUnicodeCharacters = async () => {
     console.time("loadUnicodeCharacters");
-    const unparsedText = await promises.readFile(filePath, {
+    const unparsedText = await promises.readFile(unicodeDataTxtFilePath, {
         encoding: "utf-8",
     });
 
@@ -34,7 +46,7 @@ export const loadUnicodeCharacters = async () => {
 
     const mappedAliases = loadUnicodeAliases();
 
-    const parsedCharacters: UnicodeCharacter[] = parseResult.data.map(
+    const parsedCharacters: UnicodeCharacter[] = preFilteredCharacters.map(
         (line: string[]) => {
             let x = new UnicodeCharacter(
                 line[0],
@@ -61,11 +73,8 @@ export const loadUnicodeCharacters = async () => {
 };
 
 export const loadUnicodeAliases = () => {
-    const filePath =
-        "C:\\Users\\irond\\Documents\\Coding\\CharacterPalette\\unicodeData\\NamesListPreProcessed.txt";
-
     console.time("loadUnicodeAliases");
-    const unparsedText = fs.readFileSync(filePath, {
+    const unparsedText = fs.readFileSync(processedNamesListFilePath, {
         encoding: "utf-8",
     });
 
