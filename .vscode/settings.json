@@ -13,7 +13,7 @@
     "mochaExplorer.files": "out/test/suite/*.test.js",
     "mochaExplorer.ui": "tdd",
     "mochaExplorer.launcherScript": "node_modules/mocha-explorer-launcher-scripts/vscode-test",
-    "mochaExplorer.autoload": false,
+    "mochaExplorer.autoload": true,
     "mochaExplorer.ipcRole": "server",
     "mochaExplorer.env": {
       "VSCODE_VERSION": "insiders",
