@@ -26,6 +26,10 @@ Recently used characters will show up twice if you type and search for them.
 
 Initial release of UnicodePalette
 
+### 1.0.1
+
+Fixed typo in README
+
 ## Other Notes
 
 Unicode data based on version 13.0.0.
