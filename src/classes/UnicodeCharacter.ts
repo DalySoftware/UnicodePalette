@@ -1,5 +1,5 @@
-import { categoryFromString, GeneralCategory } from "./GeneralCategory";
-import { QuickPickItemExtended } from "./QuickPickItemExtended";
+import { categoryFromString, GeneralCategory } from "../other/GeneralCategory";
+import { QuickPickItemExtended } from "../other/QuickPickItemExtended";
 
 export default class UnicodeCharacter {
     constructor(

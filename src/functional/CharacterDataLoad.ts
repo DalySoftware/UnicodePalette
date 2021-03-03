@@ -1,6 +1,6 @@
 import * as avro from "avsc";
 import * as path from "path";
-import UnicodeCharacter from "./UnicodeCharacter";
+import UnicodeCharacter from "../classes/UnicodeCharacter";
 
 const avroFilePath = path.join(
     __dirname,

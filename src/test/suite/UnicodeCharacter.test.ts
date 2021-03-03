@@ -1,6 +1,6 @@
 import { describe } from "mocha";
 import * as assert from "assert";
-import UnicodeCharacter from "../../UnicodeCharacter";
+import UnicodeCharacter from "../../classes/UnicodeCharacter";
 
 describe("UnicodeCharacter", function () {
     describe("#toString()", function () {

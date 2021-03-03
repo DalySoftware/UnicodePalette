@@ -1,5 +1,5 @@
 import { ExtensionContext } from "vscode";
-import UnicodeCharacter from "./UnicodeCharacter";
+import UnicodeCharacter from "../classes/UnicodeCharacter";
 
 const recentlyUsedKey = "recentlyUsed";
 const maxToStore = 20;

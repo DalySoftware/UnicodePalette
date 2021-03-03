@@ -1,10 +1,10 @@
 import * as vscode from "vscode";
-import { loadParsedData } from "./CharacterDataLoad";
-import { QuickPickItemExtended } from "./QuickPickItemExtended";
+import { loadParsedData } from "./functional/CharacterDataLoad";
+import { QuickPickItemExtended } from "./other/QuickPickItemExtended";
 import {
     addCharacterToRecentlyUsed,
     getRecentlyUsed,
-} from "./RecentlyUsedCharactersStorage";
+} from "./functional/RecentlyUsedCharactersStorage";
 
 export function activate(context: vscode.ExtensionContext) {
     context.subscriptions.push(

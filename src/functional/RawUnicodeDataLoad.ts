@@ -1,9 +1,9 @@
 import Papa from "papaparse";
 import * as fs from "fs";
 import * as path from "path";
-import UnicodeCharacter from "./UnicodeCharacter";
+import UnicodeCharacter from "../classes/UnicodeCharacter";
 import { promises } from "fs";
-import { GeneralCategory } from "./GeneralCategory";
+import { GeneralCategory } from "../other/GeneralCategory";
 
 const unicodeDataTxtFilePath = path.join(
     __dirname,
