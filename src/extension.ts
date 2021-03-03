@@ -1,5 +1,5 @@
 import * as vscode from "vscode";
-import getCharacterQuickPickItems from "./CharacterSet";
+import { loadParsedData } from "./CharacterDataLoad";
 import { QuickPickItemExtended } from "./QuickPickItemExtended";
 import {
     addCharacterToRecentlyUsed,
@@ -17,7 +17,9 @@ export function activate(context: vscode.ExtensionContext) {
 
                 quickPickItems = [
                     ...quickPickItems,
-                    ...(await getCharacterQuickPickItems()),
+                    ...(await loadParsedData()).map(char =>
+                        char.asQuickPickItem(),
+                    ),
                 ];
 
                 const input = (await vscode.window.showQuickPick(
