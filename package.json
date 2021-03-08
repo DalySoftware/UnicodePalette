@@ -1,7 +1,7 @@
 {
     "name": "unicodepalette",
     "displayName": "Unicode Palette",
-    "description": "A character palette for searching for and inserting unicode characters in VS Code. Useful for symbols, emoji and other characters that you might not have on your keyboard.",
+    "description": "Find and insert unicode characters in VS Code. Useful for symbols, emoji and other characters that you might not have on your keyboard.",
     "icon": "readmeFiles/icon.png",
     "version": "1.0.1",
     "publisher": "DalySoftware",
