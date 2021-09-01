@@ -4,7 +4,7 @@ A character palette for searching for and inserting unicode characters in VS Cod
 
 Includes searching by unicode published character aliases and categories.
 
-Access the extension via `Ctrl + Shit + P` or `View` > `Command Palette...` > `Insert Characters`.
+Access the extension via `Ctrl + Shift + P` or `View` > `Command Palette...` > `Insert Characters`.
 
 ## Features
 
