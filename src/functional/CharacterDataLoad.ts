@@ -5,6 +5,7 @@ import UnicodeCharacter from "../classes/UnicodeCharacter";
 const avroFilePath = path.join(
     __dirname,
     "..",
+    "..",
     "unicodeData",
     "ParsedCharactersAvro.txt",
 );
@@ -43,6 +44,8 @@ const savedParsedData = async () => {
 };
 
 export const loadParsedData = async () => {
+    console.time(`Parsing unicode character data from ${avroFilePath}`);
+
     let unicodeCharacters = new Promise<UnicodeCharacter[]>(
         (resolve, reject) => {
             avro.createFileDecoder(avroFilePath).on("data", characters => {
@@ -58,6 +61,10 @@ export const loadParsedData = async () => {
                     ),
                 );
             });
+
+            console.timeEnd(
+                `Parsing unicode character data from ${avroFilePath}`,
+            );
         },
     );
 
