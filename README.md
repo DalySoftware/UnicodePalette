@@ -30,6 +30,12 @@ Initial release of UnicodePalette
 
 Fixed typo in README
 
+### 1.0.2
+
+Fixed typo
+Published extension on Open VSX Registry
+Updated third party libraries
+
 ## Other Notes
 
 Unicode data based on version 13.0.0.
