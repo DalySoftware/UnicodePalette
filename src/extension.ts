@@ -7,13 +7,19 @@ import {
 } from "./functional/RecentlyUsedCharactersStorage";
 
 export function activate(context: vscode.ExtensionContext) {
+    console.debug("Starting UnicodePalette");
+
     context.subscriptions.push(
         vscode.commands.registerTextEditorCommand(
             "unicodepalette.insertCharacter",
             async (editor, edit) => {
+                console.debug("Getting Recently Used");
+
                 let quickPickItems = getRecentlyUsed(context).map(x =>
                     x.asQuickPickItem(),
                 );
+
+                console.debug("Getting other quickPickItems");
 
                 quickPickItems = [
                     ...quickPickItems,
@@ -21,6 +27,9 @@ export function activate(context: vscode.ExtensionContext) {
                         char.asQuickPickItem(),
                     ),
                 ];
+
+                console.debug(`Got ${quickPickItems.length} quickPickItems`);
+                console.debug("Showing QuickPick");
 
                 const input = (await vscode.window.showQuickPick(
                     quickPickItems,
@@ -30,6 +39,8 @@ export function activate(context: vscode.ExtensionContext) {
                         ignoreFocusOut: true,
                     },
                 )) as QuickPickItemExtended;
+
+                console.debug("Reacting to user input");
 
                 if (input?.label) {
                     editor.edit(edit => {
@@ -54,6 +65,8 @@ export function activate(context: vscode.ExtensionContext) {
                         );
                     });
                 }
+
+                console.debug("Deactivating UnicodePalette");
 
                 deactivate();
             },
