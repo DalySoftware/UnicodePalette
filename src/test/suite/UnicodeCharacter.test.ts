@@ -1,4 +1,4 @@
-import { describe } from "mocha";
+// import { describe, it } from "mocha";
 import * as assert from "assert";
 import UnicodeCharacter from "../../classes/UnicodeCharacter";
 
