@@ -10,8 +10,12 @@ const avroFilePath = path.join(
     "ParsedCharactersAvro.txt",
 );
 
-const savedParsedData = async () => {
-    const allCharacters = await loadParsedData();
+export const saveParsedData = async (chars: UnicodeCharacter[] = []) => {
+    console.time("saveParsedData");
+
+    if (!chars) {
+        chars = await loadParsedData();
+    }
 
     const characterSetType = avro.Type.forSchema({
         type: "array",
@@ -37,10 +41,12 @@ const savedParsedData = async () => {
         },
     } as avro.Schema);
 
-    const encoder = avro.createFileEncoder(avroFilePath, characterSetType);
+    const encoder = avro.createFileEncoder(avroFilePath, characterSetType, { });
 
-    encoder.write(allCharacters);
+    encoder.write(chars);
     encoder.end();
+
+    console.timeEnd("saveParsedData");
 };
 
 export const loadParsedData = async () => {

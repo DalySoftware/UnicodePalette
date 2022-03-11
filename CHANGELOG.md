@@ -15,3 +15,7 @@ All notable changes to the Unicode Palette extension will be documented in this 
 -   Fixed typo
 -   Published extension on Open VSX Registry
 -   Updated third party libraries
+
+## [1.0.3]
+
+-   Updated data to Unicode 14

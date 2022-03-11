@@ -36,9 +36,13 @@ Recently used characters will show up twice if you type and search for them.
 -   Published extension on Open VSX Registry
 -   Updated third party libraries
 
+### 1.0.3
+
+-   Updated data to Unicode 14
+
 ## Other Notes
 
-Unicode data based on version 13.0.0.
+Unicode data based on version 14.0.0.
 
 Excluded Unicode General Categories:
 
