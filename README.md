@@ -24,17 +24,17 @@ Recently used characters will show up twice if you type and search for them.
 
 ### 1.0.0
 
-Initial release of UnicodePalette
+-   Initial release of UnicodePalette
 
 ### 1.0.1
 
-Fixed typo in README
+-   Fixed typo in README
 
 ### 1.0.2
 
-Fixed typo
-Published extension on Open VSX Registry
-Updated third party libraries
+-   Fixed typo
+-   Published extension on Open VSX Registry
+-   Updated third party libraries
 
 ## Other Notes
 
