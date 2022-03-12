@@ -19,3 +19,7 @@ All notable changes to the Unicode Palette extension will be documented in this 
 ## [1.0.3]
 
 -   Updated data to Unicode 14
+
+## [1.0.4]
+
+-   Reverted attempt to minify javascript

@@ -41,7 +41,7 @@ export const saveParsedData = async (chars: UnicodeCharacter[] = []) => {
         },
     } as avro.Schema);
 
-    const encoder = avro.createFileEncoder(avroFilePath, characterSetType, { });
+    const encoder = avro.createFileEncoder(avroFilePath, characterSetType, {});
 
     encoder.write(chars);
     encoder.end();

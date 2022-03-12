@@ -40,6 +40,10 @@ Recently used characters will show up twice if you type and search for them.
 
 -   Updated data to Unicode 14
 
+### 1.0.4
+
+-   Reverted attempt to minify javascript
+
 ## Other Notes
 
 Unicode data based on version 14.0.0.
